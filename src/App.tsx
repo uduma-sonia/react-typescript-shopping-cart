@@ -1,26 +1,87 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useQuery } from "react-query";
+import Cart from "./Cart/Cart";
+import { Item } from "./Item/Item";
 
-function App() {
+export type productType = {
+  id: number;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;
+  amount: number;
+  rating: object;
+};
+
+const allProducts = async (): Promise<productType[]> =>
+  await (await fetch("https://fakestoreapi.com/products")).json();
+
+const App = () => {
+  const [cartItems, setCartItems] = useState([] as productType[]);
+  const { data, isLoading, error } = useQuery<productType[]>(
+    "products",
+    allProducts
+  );
+
+  const getTotalItems = (items: productType[]) =>
+    items.reduce((a: number, items) => a + items.amount, 0);
+
+  // ADD TO CART FUNCTION
+  const handleAddToCart = (clickedItem: productType) => {
+    setCartItems((prev) => {
+      // 1. Is the item already added in the cart?
+      const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+
+      if (isItemInCart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      // First time the item is added
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+
+  // REMOVE FROM CART
+  const handleRemoveFromCart = (id: number) => {
+    setCartItems((prev) =>
+      prev.reduce((acc, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return acc;
+          return [...acc, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...acc, item];
+        }
+      }, [] as productType[])
+    );
+  };
+
+  if (error) return <div>SOMETHING WENT WRONG</div>;
+
+  if (isLoading) return <div>LOADING</div>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        cart counter
+        <button>{getTotalItems(cartItems)}</button>
+      </div>
+      {data?.map((item) => (
+        <Item item={item} handleAddToCart={handleAddToCart} />
+      ))}
+
+      <div>
+        <Cart
+          cartItems={cartItems}
+          addToCart={handleAddToCart}
+          removeFromCart={handleRemoveFromCart}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
