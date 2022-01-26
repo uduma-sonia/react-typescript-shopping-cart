@@ -1,0 +1,16 @@
+.navbar-container {
+  background-color: rgb(245, 245, 245);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 50px;
+}
+
+.navbar-category {
+  width: 20%;
+  color: rgb(160, 160, 160);
+}
+
+.user-name:hover {
+  color: #ff9900;
+}

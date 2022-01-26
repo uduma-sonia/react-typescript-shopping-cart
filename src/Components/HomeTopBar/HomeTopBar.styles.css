@@ -5,15 +5,10 @@
   overflow-x: hidden;
 }
 
-.border {
-  border: 1px solid gray;
-}
-
 .item-1,
 .item-2,
 .item-3 {
   position: absolute;
-  /* display: block; */
   top: 10px;
   animation-duration: 20s;
   animation-timing-function: ease-in-out;
