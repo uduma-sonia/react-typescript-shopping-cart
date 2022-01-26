@@ -1,3 +1,8 @@
+// import { HashRouter as Router,  Route, Link } from "react-router-dom";
+// import { Home } from "./Pages/Home";
+import { Login } from "./Pages/Login/Login";
+import "./Styles/Global.css";
+
 import { useState } from "react";
 import { useQuery } from "react-query";
 import Cart from "./Cart/Cart";
@@ -65,7 +70,7 @@ const App = () => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         cart counter
         <button>{getTotalItems(cartItems)}</button>
       </div>
@@ -79,7 +84,9 @@ const App = () => {
           addToCart={handleAddToCart}
           removeFromCart={handleRemoveFromCart}
         />
-      </div>
+      </div> */}
+      {/* <Route path='/' component={Home}> */}
+      <Login />
     </div>
   );
 };

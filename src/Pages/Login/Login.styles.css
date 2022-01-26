@@ -1,0 +1,47 @@
+.login-container {
+  position: relative;
+  height: 100vh;
+}
+
+.border {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.overlay-1 {
+  position: absolute;
+  bottom: 0%;
+  width: 700px;
+  height: 50%;
+  background-color: rgb(24, 24, 24);
+  clip-path: polygon(0 0%, 0% 100%, 100% 100%);
+}
+
+.overlay-2 {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 800px;
+  height: 100%;
+  background-color: rgba(24, 24, 24, 0.911);
+  clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+}
+
+.login-container h2 {
+  font-size: 1.3rem;
+}
+
+.form-input {
+  border-radius: 4px;
+  width: 300px;
+  border: 1px solid #800080;
+  border-bottom: 2px solid #800080;
+}
+.login-btn {
+  border: 1px solid #800080;
+  border-radius: 4px;
+  background-color: #800080;
+  color: #ffffff;
+}
+.login-btn:hover {
+  background-color: #690169;
+}
