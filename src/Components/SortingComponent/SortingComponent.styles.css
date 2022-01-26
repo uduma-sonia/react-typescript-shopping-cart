@@ -1,0 +1,15 @@
+.sorting-container > div {
+  background-color: white;
+  border-radius: 7px;
+  position: sticky;
+  top: 70px;
+}
+
+.sorting-container ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.sorting-container ul li:hover {
+  color: #ff9900;
+  font-weight: 600;
+}
