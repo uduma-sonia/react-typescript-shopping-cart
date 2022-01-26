@@ -1,5 +1,5 @@
-// import { HashRouter as Router,  Route, Link } from "react-router-dom";
-// import { Home } from "./Pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./Pages/Home/Home";
 import { Login } from "./Pages/Login/Login";
 import "./Styles/Global.css";
 
@@ -64,12 +64,12 @@ const App = () => {
     );
   };
 
-  if (error) return <div>SOMETHING WENT WRONG</div>;
+  // if (error) return <div>SOMETHING WENT WRONG</div>;
 
-  if (isLoading) return <div>LOADING</div>;
+  // if (isLoading) return <div>LOADING</div>;
 
   return (
-    <div>
+    <BrowserRouter>
       {/* <div>
         cart counter
         <button>{getTotalItems(cartItems)}</button>
@@ -86,8 +86,12 @@ const App = () => {
         />
       </div> */}
       {/* <Route path='/' component={Home}> */}
-      <Login />
-    </div>
+      {/* <Login /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

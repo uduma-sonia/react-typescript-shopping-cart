@@ -33,12 +33,24 @@ button {
 .cursor-pointer {
   cursor: pointer;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 /* ////////////////// */
 /* COLOR */
 /* ///////////////// */
 .color-gray {
   color: #303030;
+}
+.color-peace {
+  color: #f0f0f0;
 }
 
 /* ////////////////// */
@@ -114,6 +126,12 @@ button {
 .fs-sm {
   font-size: 0.9rem;
 }
+.fs-md {
+  font-size: 1.5rem;
+}
+.fs-lg {
+  font-size: 2rem;
+}
 
 /* ////////////////// */
 /*FONT WEIGHT */
@@ -129,6 +147,28 @@ button {
 }
 .fw-bold {
   font-weight: 700;
+}
+
+/* ////////////////// */
+/*TEXT ALIGNMENT AND TRANSFORMATION*/
+/* ///////////////// */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
 }
 
 /* ////////////////// */
