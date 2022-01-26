@@ -45,6 +45,15 @@ button {
 ul {
   list-style: none;
 }
+.object-cover {
+  object-fit: cover;
+}
+.object-container {
+  object-fit: contain;
+}
+small {
+  font-size: 10px;
+}
 
 /* ////////////////// */
 /* COLOR */
@@ -69,7 +78,7 @@ ul {
   border: none;
 }
 .border {
-  border: 1px solid gray;
+  border: 1px solid rgb(177, 174, 174);
 }
 .rounded {
   border-radius: 7px;
@@ -166,6 +175,12 @@ ul {
 }
 .j-evenly {
   justify-content: space-evenly;
+}
+.j-end {
+  justify-content: end;
+}
+.j-start {
+  justify-content: start;
 }
 .items-center {
   align-items: center;

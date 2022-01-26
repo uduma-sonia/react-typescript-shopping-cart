@@ -14,3 +14,24 @@
 .user-name:hover {
   color: #ff9900;
 }
+
+@media (max-width: 500px) {
+  .navbar-category {
+    display: none !important;
+  }
+  .logo {
+    font-size: 1.3rem !important;
+  }
+  .profile {
+    width: 100px !important;
+  }
+  .user-name {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-category {
+    display: none !important;
+  }
+}

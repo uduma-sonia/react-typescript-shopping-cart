@@ -3,7 +3,7 @@ import "./HomeTopBar.styles.css";
 
 export const HomeTopBar: React.FC<{}> = () => {
   return (
-    <div className="topbar-container center no-scrollbar color-peace fw-semibold fs-md capitalize">
+    <div className="topbar-container center no-scrollbar color-peace fw-semibold fs-md capitalize full-width-screen">
       {/* <div>
         <p className="item-1">
           enjoy free deliver throughout the month of february
