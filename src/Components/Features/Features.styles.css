@@ -23,8 +23,15 @@
 }
 
 @media (max-width: 600px) {
+  .features-container ul li:nth-child(1) {
+    background-color: #ff990033;
+  }
   .features-container ul li:nth-child(2) {
     margin: 0px 10px !important;
+    background-color: #80008033;
+  }
+  .features-container ul li:nth-child(3) {
+    background-color: #00800033;
   }
   .features-container ul {
     font-size: 0.7rem;

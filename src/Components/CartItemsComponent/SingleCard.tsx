@@ -1,16 +1,16 @@
 import React from "react";
-import dummyImg from "../../teflar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { productType } from "../../Pages/Home/Home";
 
-export const SingleCard: React.FC<{}> = () => {
+export const SingleCard: React.FC<Props> = ({ item, handleAddToCart }) => {
   return (
     <div className="rounded item-card flex flex-col p-2">
       <div
-        className="border item-card-image-container"
+        className="item-card-image-container"
         style={{
-          backgroundImage: `url(${dummyImg})`,
-          backgroundPosition: "center",
+          backgroundImage: `url(${item.image})`,
+          backgroundPosition: "top",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -18,17 +18,12 @@ export const SingleCard: React.FC<{}> = () => {
 
       <div className="mt-2 color-gray">
         <p className="fs-sm title">Fjallraven - Foldsack No. 1 Backpack</p>
-        <small>men's clothing</small>
+        <small>{item.category}</small>
 
-        <p className="fw-semibold mt-2 mb-2 price">$109.00</p>
+        <p className="fw-semibold mt-2 mb-2 price">${item.price}</p>
 
         <div>
-          <FontAwesomeIcon size="xs" icon={faStar} />
-          <FontAwesomeIcon size="xs" icon={faStar} />
-          <FontAwesomeIcon size="xs" icon={faStar} />
-          <FontAwesomeIcon size="xs" icon={faStar} />
-          <FontAwesomeIcon size="xs" icon={faStar} />
-          <small className="pl-2">(120 ratings)</small>
+          <small>{item.rating.rate}/5 ratings</small>
         </div>
 
         <div className="flex j-end">
@@ -36,6 +31,7 @@ export const SingleCard: React.FC<{}> = () => {
             color="#ff9900"
             className="cursor-pointer add-cart-btn"
             icon={faShoppingBasket}
+            // onClick={() => handleAddToCart(item)}
           />
         </div>
       </div>
@@ -46,3 +42,8 @@ export const SingleCard: React.FC<{}> = () => {
 {
   /* <td className="pr-3">{item.body.substring(0, 65)}...</td> */
 }
+
+type Props = {
+  item: productType;
+  handleAddToCart: (clickedItem: productType) => void;
+};
