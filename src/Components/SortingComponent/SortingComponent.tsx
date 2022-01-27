@@ -3,7 +3,10 @@ import "./SortingComponent.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-export const SortingComponent: React.FC<{}> = () => {
+export const SortingComponent: React.FC<Props> = ({
+  sortLowPrice,
+  sortHighPrice,
+}) => {
   const [showList, setShowList] = useState<boolean>(false);
 
   return (
@@ -23,6 +26,7 @@ export const SortingComponent: React.FC<{}> = () => {
           </button>
         </div>
 
+        {/* for mobile  */}
         <ul
           className="fw-light fs-sm mobile-list rounded"
           style={showList ? { display: "flex" } : { display: "none" }}
@@ -34,14 +38,24 @@ export const SortingComponent: React.FC<{}> = () => {
           <li>Women</li>
         </ul>
 
+        {/* for desktop  */}
         <ul className="fw-light fs-sm desktop-list">
-          <li>Lowest to highest price</li>
-          <li>Highest to Lowest price</li>
+          <li onClick={() => sortLowPrice()}>Lowest to highest price</li>
+
+          <li onClick={() => sortHighPrice()}>Highest to Lowest price</li>
+
           <li>Higest rating</li>
+
           <li>Men</li>
+
           <li>Women</li>
         </ul>
       </div>
     </div>
   );
+};
+
+type Props = {
+  sortLowPrice: () => void;
+  sortHighPrice: () => void;
 };

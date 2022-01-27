@@ -12,7 +12,6 @@
 }
 .sorting-container ul li:hover {
   color: #ff9900;
-  font-weight: 600;
 }
 .sort-by-btn-2 {
   display: none;

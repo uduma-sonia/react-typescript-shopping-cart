@@ -21,11 +21,12 @@ const allProducts = async (): Promise<productType[]> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
 
 export const Home: React.FC<{}> = () => {
-  const [cartItems, setCartItems] = useState([] as productType[]);
   const { data, isLoading, error } = useQuery<productType[]>(
     "products",
     allProducts
   );
+  const [cartItems, setCartItems] = useState([] as productType[]);
+  const [products, setProducts] = useState(data);
 
   const getTotalItems = (items: productType[]) =>
     items.reduce((a: number, items) => a + items.amount, 0);
@@ -62,14 +63,28 @@ export const Home: React.FC<{}> = () => {
     );
   };
 
+  // SORTING FUNCTIONS
+  const sortLowPrice = () => {
+    const sorted: any = data?.sort((a, b) => a.price - b.price);
+    setProducts([...sorted]);
+  };
+  const sortHighPrice = () => {
+    const sorted: any = data?.sort((a, b) => b.price - a.price);
+    setProducts([...sorted]);
+  };
+
   return (
     <div className="home-container full-width-screen">
       <HomeTopBar />
       <Navbar />
 
-      <div className="flex container mx-auto px-5 mt-4 main-body">
-        <SortingComponent />
-        <CartItemsComponent item={data} handleAddToCart={handleAddToCart} />
+      <div className="flex container mx-auto px-5 mt-4 main-body full-width">
+        <SortingComponent
+          sortLowPrice={sortLowPrice}
+          sortHighPrice={sortHighPrice}
+        />
+
+        <CartItemsComponent item={products} handleAddToCart={handleAddToCart} />
       </div>
     </div>
   );
