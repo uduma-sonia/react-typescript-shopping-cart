@@ -82,14 +82,15 @@
 
 /* ////////////////// */
 /* ////////////////// */
-@media (max-width: 500px) {
-  .topbar-container {
-    display: none !important;
-  }
-}
 
 @media (max-width: 900px) {
   .topbar-container {
     font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .topbar-container {
+    display: none !important;
   }
 }

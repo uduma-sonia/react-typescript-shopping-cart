@@ -11,7 +11,7 @@ export const Home: React.FC<{}> = () => {
       <HomeTopBar />
       <Navbar />
 
-      <div className="flex container mx-auto px-5 mt-4">
+      <div className="flex container mx-auto px-5 mt-4 main-body">
         <SortingComponent />
         <CartItemsComponent />
       </div>

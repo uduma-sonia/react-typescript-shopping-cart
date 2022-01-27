@@ -311,6 +311,28 @@ small {
 .mt-6 {
   margin-top: 3rem;
 }
+/* //////////////////////// */
+.mr-0 {
+  margin-right: 0;
+}
+.mr-1 {
+  margin-right: 1px;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.mr-3 {
+  margin-right: 1rem;
+}
+.mr-4 {
+  margin-right: 2rem;
+}
+.mr-5 {
+  margin-right: 2.5rem;
+}
+.mr-6 {
+  margin-right: 3rem;
+}
 /* ////////////////// */
 /*PADDING */
 /* ///////////////// */
@@ -451,4 +473,10 @@ small {
 }
 .pr-5 {
   padding-right: 2rem;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100% !important;
+  }
 }

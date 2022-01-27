@@ -6,7 +6,7 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar: React.FC<{}> = () => {
   return (
-    <div className="navbar-container">
+    <div className="navbar-container full-width-screen">
       <div className="container mx-auto px-5 full-height flex j-between items-center">
         <h1 className="color-main fw-medium fs-md logo">Tap House</h1>
 

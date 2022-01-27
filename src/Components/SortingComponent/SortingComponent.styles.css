@@ -14,3 +14,36 @@
   color: #ff9900;
   font-weight: 600;
 }
+.sort-by-btn-2 {
+  display: none;
+}
+.sort-by-btn-1 {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .sorting-container {
+    width: 100% !important;
+  }
+  .sort-by-btn-1 {
+    display: none;
+  }
+  .sort-by-btn-2 {
+    display: inline-block;
+  }
+  .desktop-list {
+    display: none;
+  }
+  .sorting-container .mobile-list {
+    background-color: #ffffff;
+    position: absolute;
+    right: 0px;
+    box-shadow: 1px 2px 2px 0px rgb(240, 238, 238);
+    padding: 16px 10px 0px;
+    display: none;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    z-index: 9;
+  }
+}

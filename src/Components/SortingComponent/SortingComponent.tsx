@@ -1,13 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SortingComponent.styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export const SortingComponent: React.FC<{}> = () => {
-  return (
-    <div className="width-1-4 sorting-container">
-      <div className="m-2 py-3 px-3">
-        <p className="color-gray fw-semibold fs-sm-2 mb-3">Filter Items</p>
+  const [showList, setShowList] = useState<boolean>(false);
 
-        <ul className="fw-light fs-sm">
+  return (
+    <div className="width-1-4 sorting-container color-gray">
+      <div className="m-2 py-3 px-3">
+        <button className="color-gray fw-semibold fs-sm-2 mb-3 border-0 sort-by-btn-1">
+          Sort by
+        </button>
+
+        <div className="text-right">
+          <button
+            className="border-0 sort-by-btn-2"
+            onClick={() => setShowList(!showList)}
+          >
+            <span className="mr-2">Sort by</span>
+            <FontAwesomeIcon icon={faChevronDown} size="xs" />
+          </button>
+        </div>
+
+        <ul
+          className="fw-light fs-sm mobile-list rounded"
+          style={showList ? { display: "flex" } : { display: "none" }}
+        >
+          <li>Lowest to highest price</li>
+          <li>Highest to Lowest price</li>
+          <li>Higest rating</li>
+          <li>Men</li>
+          <li>Women</li>
+        </ul>
+
+        <ul className="fw-light fs-sm desktop-list">
           <li>Lowest to highest price</li>
           <li>Highest to Lowest price</li>
           <li>Higest rating</li>

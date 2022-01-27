@@ -28,6 +28,9 @@
   .user-name {
     font-size: 0.9rem !important;
   }
+  .navbar-container > div {
+    padding: 0px 10px !important;
+  }
 }
 
 @media (max-width: 900px) {
