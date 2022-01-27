@@ -479,4 +479,7 @@ small {
   .container {
     width: 100% !important;
   }
+  small {
+    font-size: 8px;
+  }
 }

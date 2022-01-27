@@ -16,3 +16,20 @@
 .add-cart-btn:hover {
   width: 25px;
 }
+
+@media (max-width: 600px) {
+  .cart-items-container {
+    width: 100% !important;
+  }
+  .items-container {
+    margin-top: 1rem !important;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .item-card .title {
+    font-size: 0.7rem !important;
+  }
+  .item-card .price {
+    font-size: 0.9rem !important;
+  }
+}

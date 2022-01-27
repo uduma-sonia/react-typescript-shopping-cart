@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .main-body {
     flex-direction: column;
     padding: 0px 0px !important;

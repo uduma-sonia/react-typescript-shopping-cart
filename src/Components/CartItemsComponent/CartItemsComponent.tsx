@@ -5,7 +5,7 @@ import { SingleCard } from "./SingleCard";
 
 export const CartItemsComponent: React.FC<{}> = () => {
   return (
-    <div className="width-3-4">
+    <div className="width-3-4 cart-items-container">
       <div className="m-2">
         <Features />
 

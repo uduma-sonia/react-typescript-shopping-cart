@@ -10,26 +10,26 @@ import {
 export const Features: React.FC<{}> = () => {
   return (
     <div className="features-container">
-      <ul className="flex j-between color-gray fw-medium fs-sm-2">
+      <ul className="flex j-between color-gray fw-medium fs-sm">
         <li>
           <span className="icon-container">
-            <FontAwesomeIcon icon={faBiking} />
+            <FontAwesomeIcon icon={faBiking} size="xs" />
           </span>
           Free Delivery
         </li>
 
         <li>
           <span className="icon-container">
-            <FontAwesomeIcon icon={faShoppingBag} />
+            <FontAwesomeIcon icon={faShoppingBag} size="xs" />
           </span>
           Pickup
         </li>
 
         <li>
           <span className="icon-container">
-            <FontAwesomeIcon icon={faMoneyBill} />
+            <FontAwesomeIcon icon={faMoneyBill} size="xs" />
           </span>
-          Massive Discounts
+          Discounts
         </li>
       </ul>
     </div>

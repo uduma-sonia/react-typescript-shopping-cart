@@ -7,7 +7,7 @@ import "./Home.styles.css";
 
 export const Home: React.FC<{}> = () => {
   return (
-    <div className="home-container">
+    <div className="home-container full-width-screen">
       <HomeTopBar />
       <Navbar />
 

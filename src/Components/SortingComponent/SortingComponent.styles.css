@@ -21,7 +21,7 @@
   display: block;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .sorting-container {
     width: 100% !important;
   }

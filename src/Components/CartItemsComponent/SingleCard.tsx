@@ -17,12 +17,14 @@ export const SingleCard: React.FC<{}> = () => {
       />
 
       <div className="mt-2 color-gray">
-        <p className="fs-sm">Fjallraven - Foldsack No. 1 Backpack</p>
+        <p className="fs-sm title">Fjallraven - Foldsack No. 1 Backpack</p>
         <small>men's clothing</small>
 
-        <p className="fw-semibold mt-2 mb-2">$109.00</p>
+        <p className="fw-semibold mt-2 mb-2 price">$109.00</p>
 
         <div>
+          <FontAwesomeIcon size="xs" icon={faStar} />
+          <FontAwesomeIcon size="xs" icon={faStar} />
           <FontAwesomeIcon size="xs" icon={faStar} />
           <FontAwesomeIcon size="xs" icon={faStar} />
           <FontAwesomeIcon size="xs" icon={faStar} />
