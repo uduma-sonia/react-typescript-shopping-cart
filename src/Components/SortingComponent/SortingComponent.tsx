@@ -6,6 +6,11 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 export const SortingComponent: React.FC<Props> = ({
   sortLowPrice,
   sortHighPrice,
+  sortHighRate,
+  sortMen,
+  sortWomen,
+  sortJewelery,
+  sortElectronics,
 }) => {
   const [showList, setShowList] = useState<boolean>(false);
 
@@ -31,11 +36,19 @@ export const SortingComponent: React.FC<Props> = ({
           className="fw-light fs-sm mobile-list rounded"
           style={showList ? { display: "flex" } : { display: "none" }}
         >
-          <li>Lowest to highest price</li>
-          <li>Highest to Lowest price</li>
-          <li>Higest rating</li>
-          <li>Men</li>
-          <li>Women</li>
+          <li onClick={() => sortLowPrice()}>Lowest to highest price</li>
+
+          <li onClick={() => sortHighPrice()}>Highest to Lowest price</li>
+
+          <li onClick={() => sortHighRate()}>Higest rating</li>
+
+          <li onClick={() => sortMen()}>Men</li>
+
+          <li onClick={() => sortWomen()}>Women</li>
+
+          <li onClick={() => sortJewelery()}>Jewelery</li>
+
+          <li onClick={() => sortElectronics()}>Electronics</li>
         </ul>
 
         {/* for desktop  */}
@@ -44,11 +57,15 @@ export const SortingComponent: React.FC<Props> = ({
 
           <li onClick={() => sortHighPrice()}>Highest to Lowest price</li>
 
-          <li>Higest rating</li>
+          <li onClick={() => sortHighRate()}>Higest rating</li>
 
-          <li>Men</li>
+          <li onClick={() => sortMen()}>Men</li>
 
-          <li>Women</li>
+          <li onClick={() => sortWomen()}>Women</li>
+
+          <li onClick={() => sortJewelery()}>Jewelery</li>
+
+          <li onClick={() => sortElectronics()}>Electronics</li>
         </ul>
       </div>
     </div>
@@ -58,4 +75,9 @@ export const SortingComponent: React.FC<Props> = ({
 type Props = {
   sortLowPrice: () => void;
   sortHighPrice: () => void;
+  sortHighRate: () => void;
+  sortMen: () => void;
+  sortWomen: () => void;
+  sortJewelery: () => void;
+  sortElectronics: () => void;
 };

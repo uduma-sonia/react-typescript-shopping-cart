@@ -17,7 +17,7 @@ export const SingleCard: React.FC<Props> = ({ item, handleAddToCart }) => {
       />
 
       <div className="mt-2 color-gray">
-        <p className="fs-sm title">Fjallraven - Foldsack No. 1 Backpack</p>
+        <p className="fs-sm title">Fjallraven - Foldsack</p>
         <small>{item.category}</small>
 
         <p className="fw-semibold mt-2 mb-2 price">${item.price}</p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CartItemsComponent } from "../../Components/CartItemsComponent/CartItemsComponent";
 import { HomeTopBar } from "../../Components/HomeTopBar/HomeTopBar";
 import { Navbar } from "../../Components/Navbar/Navbar";
@@ -72,16 +72,49 @@ export const Home: React.FC<{}> = () => {
     const sorted: any = data?.sort((a, b) => b.price - a.price);
     setProducts([...sorted]);
   };
+  const sortHighRate = () => {
+    const sorted: any = data?.sort((a, b) => b.rating.rate - a.rating.rate);
+    setProducts([...sorted]);
+  };
+  const sortMen = () => {
+    const sorted: any = data?.filter(
+      (item) => item.category === "men's clothing"
+    );
+    setProducts([...sorted]);
+  };
+  const sortWomen = () => {
+    const sorted: any = data?.filter(
+      (item) => item.category === "women's clothing"
+    );
+    setProducts([...sorted]);
+  };
+  const sortJewelery = () => {
+    const sorted: any = data?.filter((item) => item.category === "jewelery");
+    setProducts([...sorted]);
+  };
+  const sortElectronics = () => {
+    const sorted: any = data?.filter((item) => item.category === "electronics");
+    setProducts([...sorted]);
+  };
+
+  useEffect(() => {
+    setProducts(data);
+  }, [data]);
 
   return (
     <div className="home-container full-width-screen">
       <HomeTopBar />
       <Navbar />
 
-      <div className="flex container mx-auto px-5 mt-4 main-body full-width">
+      <div className="flex container mx-auto px-5 mt-4 main-body ">
         <SortingComponent
           sortLowPrice={sortLowPrice}
           sortHighPrice={sortHighPrice}
+          sortHighRate={sortHighRate}
+          sortMen={sortMen}
+          sortWomen={sortWomen}
+          sortJewelery={sortJewelery}
+          sortElectronics={sortElectronics}
         />
 
         <CartItemsComponent item={products} handleAddToCart={handleAddToCart} />
