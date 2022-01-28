@@ -13,7 +13,7 @@ export const CartItemsComponent: React.FC<Props> = ({
       <div className="m-2">
         <Features />
 
-        <div className="items-container mt-4 pb-4">
+        <div className="items-container mt-4 pb-4 full-width">
           {item?.map((item: productType, index: number) => (
             <SingleCard
               item={item}
