@@ -87,6 +87,9 @@ small {
 /* ////////////////// */
 /* SIZE */
 /* ///////////////// */
+.width-auto {
+  width: auto;
+}
 .full-width {
   width: 100%;
 }

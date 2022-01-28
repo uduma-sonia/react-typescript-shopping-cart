@@ -7,34 +7,33 @@
 }
 
 .navbar-category {
-  width: 20%;
   color: rgb(160, 160, 160);
+}
+
+.navbar-category p:nth-child(2) {
+  margin: 0px 15px;
 }
 
 .user-name:hover {
   color: #ff9900;
 }
 
+@media (max-width: 900px) {
+  .navbar-category {
+    display: none !important;
+  }
+}
 @media (max-width: 500px) {
   .navbar-category {
     display: none !important;
   }
   .logo {
-    font-size: 1.3rem !important;
-  }
-  .profile {
-    width: 100px !important;
+    font-size: 1.2rem !important;
   }
   .user-name {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
   .navbar-container > div {
     padding: 0px 10px !important;
-  }
-}
-
-@media (max-width: 900px) {
-  .navbar-category {
-    display: none !important;
   }
 }

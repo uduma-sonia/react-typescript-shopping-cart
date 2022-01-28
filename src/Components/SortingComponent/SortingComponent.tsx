@@ -35,6 +35,7 @@ export const SortingComponent: React.FC<Props> = ({
         <ul
           className="fw-light fs-sm mobile-list rounded"
           style={showList ? { display: "flex" } : { display: "none" }}
+          onClick={() => setShowList(false)}
         >
           <li onClick={() => sortLowPrice()}>Lowest to highest price</li>
 

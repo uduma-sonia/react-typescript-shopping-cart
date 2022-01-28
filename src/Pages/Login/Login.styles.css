@@ -41,3 +41,37 @@
 .login-btn:hover {
   background-color: #690169;
 }
+
+@media (max-width: 600px) {
+  .overlay-1 {
+    display: none !important;
+  }
+
+  .overlay-2 {
+    right: 0%;
+    width: 100vw;
+    height: 60%;
+    background-color: rgba(24, 24, 24, 0.961);
+    clip-path: polygon(100% 20%, 0% 100%, 100% 100%);
+  }
+
+  .overlay-3 {
+    position: absolute;
+    top: -140px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    background-color: #800080;
+    clip-path: circle(50% at 50% 50%);
+  }
+}
+
+@media (max-width: 950px) {
+  .overlay-1 {
+    display: none !important;
+  }
+  .overlay-2 {
+    width: 100vw;
+    height: 60%;
+  }
+}

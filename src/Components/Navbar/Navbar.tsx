@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.styles.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar: React.FC<{}> = () => {
+  const [name, setName] = useState<string>("");
+
+  useEffect(() => {
+    if (window !== undefined) {
+      const userName = JSON.parse(window.localStorage.getItem("_name") || "");
+      setName(userName);
+    }
+  }, []);
+
   return (
     <div className="navbar-container full-width-screen">
       <div className="container mx-auto px-5 full-height flex j-between items-center">
@@ -16,9 +25,9 @@ export const Navbar: React.FC<{}> = () => {
           <p>electronics</p>
         </div>
 
-        <div className="width-8 flex j-between profile">
-          <button className="border-0 fs-sm-2 fw-semibold user-name">
-            Hi, Sonia
+        <div className="width-auto  flex j-between profile">
+          <button className="border-0 fs-sm-2 mr-4 fw-semibold user-name">
+            Hi, {name}
           </button>
 
           <Link to="/cart">
