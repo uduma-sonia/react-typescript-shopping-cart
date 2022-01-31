@@ -227,6 +227,9 @@ small {
   justify-content: center;
   align-items: center;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
@@ -407,6 +410,35 @@ small {
 }
 .mr-6 {
   margin-right: 3rem;
+}
+/* //////////////////////// */
+.mx-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+.mx-1 {
+  margin-right: 1px;
+  margin-left: 1px;
+}
+.mx-2 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+.mx-3 {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.mx-4 {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+.mx-5 {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+.mx-6 {
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 /* ////////////////// */
 /*PADDING */
