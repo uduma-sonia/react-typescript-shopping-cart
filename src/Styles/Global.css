@@ -177,6 +177,12 @@ small {
 .width-8 {
   width: 160px;
 }
+.width-9 {
+  width: 180px;
+}
+.width-10 {
+  width: 200px;
+}
 
 /* HEIGHT /////// */
 .full-height {
@@ -217,6 +223,12 @@ small {
 }
 .height-8 {
   height: 160px;
+}
+.height-9 {
+  height: 180px;
+}
+.height-10 {
+  height: 200px;
 }
 
 /* ////////////////// */

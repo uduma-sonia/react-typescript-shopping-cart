@@ -4,7 +4,7 @@ import "./Navbar.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export const Navbar: React.FC<{}> = () => {
+export const Navbar: React.FC<Props> = ({ openCart }) => {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
   const [searchInput, setSearchInput] = useState<string>("");
@@ -48,14 +48,16 @@ export const Navbar: React.FC<{}> = () => {
             Hi, <span className="capitalize">{name}</span>
           </button>
 
-          <Link to="/cart">
-            <button className="border-0 relative">
-              <span className="cart-count fw-bold absolute fs-sm">1</span>
-              <FontAwesomeIcon icon={faShoppingBasket} size="lg" />
-            </button>
-          </Link>
+          <button className="border-0 relative" onClick={() => openCart()}>
+            <span className="cart-count fw-bold absolute fs-sm">1</span>
+            <FontAwesomeIcon icon={faShoppingBasket} size="lg" />
+          </button>
         </div>
       </div>
     </div>
   );
+};
+
+type Props = {
+  openCart: () => void;
 };

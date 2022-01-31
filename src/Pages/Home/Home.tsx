@@ -5,6 +5,7 @@ import { Navbar } from "../../Components/Navbar/Navbar";
 import { SortingComponent } from "../../Components/SortingComponent/SortingComponent";
 import "./Home.styles.css";
 import { useQuery } from "react-query";
+import { CartContainer } from "../../Components/CartPage/CartContainer";
 
 // types
 export type productType = {
@@ -27,6 +28,7 @@ export const Home: React.FC<{}> = () => {
   );
   const [cartItems, setCartItems] = useState([] as productType[]);
   const [products, setProducts] = useState(data);
+  const [openCart, setOpenCart] = useState<boolean>(false);
 
   const getTotalItems = (items: productType[]) =>
     items.reduce((a: number, items) => a + items.amount, 0);
@@ -96,6 +98,10 @@ export const Home: React.FC<{}> = () => {
     setProducts([...sorted]);
   };
 
+  const handleOpenCart = () => {
+    setOpenCart(!openCart);
+  };
+
   useEffect(() => {
     setProducts(data);
   }, [data]);
@@ -103,7 +109,7 @@ export const Home: React.FC<{}> = () => {
   return (
     <div className="home-container full-width-screen">
       <HomeTopBar />
-      <Navbar />
+      <Navbar openCart={handleOpenCart} />
 
       <div className="flex container mx-auto px-5 mt-4 main-body ">
         <SortingComponent
@@ -116,8 +122,32 @@ export const Home: React.FC<{}> = () => {
           sortElectronics={sortElectronics}
         />
 
-        <CartItemsComponent item={products} handleAddToCart={handleAddToCart} />
+        <CartItemsComponent
+          item={products}
+          handleAddToCart={handleAddToCart}
+          loading={isLoading}
+        />
       </div>
+
+      {openCart ? (
+        <div className="cart-container">
+          <div className="color-gray cart-container-inner p-3">
+            <div className="flex j-between items-center mb-3">
+              <p className="fs-sm-2 fw-medium">Your cart</p>
+              <button
+                className="fw-semibold fs-md border-0"
+                onClick={() => handleOpenCart()}
+              >
+                X
+              </button>
+            </div>
+
+            <p className="">3 items</p>
+
+            <CartContainer />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
