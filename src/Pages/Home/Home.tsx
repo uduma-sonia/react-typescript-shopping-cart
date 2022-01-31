@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CartItemsComponent } from "../../Components/CartItemsComponent/CartItemsComponent";
+import { CartItemsComponent } from "../../Components/ProductItemsComponent/ProductItemsComponent";
 import { HomeTopBar } from "../../Components/HomeTopBar/HomeTopBar";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { SortingComponent } from "../../Components/SortingComponent/SortingComponent";
@@ -36,7 +36,6 @@ export const Home: React.FC<{}> = () => {
     setCartItems((prev) => {
       // 1. Is the item already added in the cart?
       const isItemInCart = prev.find((item) => item.id === clickedItem.id);
-
       if (isItemInCart) {
         return prev.map((item) =>
           item.id === clickedItem.id

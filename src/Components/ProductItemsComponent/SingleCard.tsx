@@ -40,7 +40,7 @@ export const SingleCard: React.FC<Props> = ({ item, handleAddToCart }) => {
             color="#ff9900"
             className="cursor-pointer add-cart-btn"
             icon={faShoppingBasket}
-            // onClick={() => handleAddToCart(item)}
+            onClick={() => handleAddToCart(item)}
           />
         </div>
       </div>

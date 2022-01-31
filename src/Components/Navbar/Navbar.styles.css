@@ -17,6 +17,23 @@
 .user-name:hover {
   color: #ff9900;
 }
+.cart-count {
+  color: #ff9900;
+  right: -8px;
+  top: -7px;
+  background-color: white;
+}
+.search-input {
+  height: 30px;
+  border: 1px solid #800080;
+}
+.search-btn {
+  padding: 0px 14px;
+  background-color: #800080;
+}
+.search-btn:hover {
+  background-color: #700270;
+}
 
 @media (max-width: 900px) {
   .navbar-category {

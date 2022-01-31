@@ -1,6 +1,6 @@
 import React from "react";
 import { Features } from "../Features/Features";
-import "./CartItemComponent.styles.css";
+import "./ProductItemComponent.styles.css";
 import { SingleCard } from "./SingleCard";
 import { productType } from "../../Pages/Home/Home";
 

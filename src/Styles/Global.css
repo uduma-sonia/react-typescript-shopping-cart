@@ -582,6 +582,21 @@ small {
   padding-right: 2rem;
 }
 
+/* ///////////// */
+/* POSITIONS  */
+/* /////////// */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.sticky {
+  position: sticky;
+}
 @media (max-width: 500px) {
   .container {
     width: 100% !important;
