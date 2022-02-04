@@ -1,57 +1,75 @@
 import React from "react";
 import "./CartPage.styles.css";
-import teflar from "../../teflar.jpg";
+import { productType } from "../../Pages/Home/Home";
 
-export const CartContainer: React.FC<{}> = () => {
+export const CartContainer: React.FC<Props> = ({
+  cartItems,
+  removeFromCart,
+  addToCart,
+}) => {
   return (
     <div className="mt-5">
-      <div className="cart-card flex flex-col height-6">
-        <div className="height-1-2 flex">
-          {/* image  */}
-          <div
-            className="width-4"
-            style={{
-              backgroundImage: `url(${teflar})`,
-              backgroundPosition: "top",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
-          <div className="flex-grow items-self-center flex items-center j-between">
-            <div className="mx-3">
-              <button className="rounded-circle px-2 py-1 fw-bold fs-sm">
-                -
-              </button>
+      {cartItems.map((item) => (
+        <div className="cart-card flex flex-col height-6" key={item.id}>
+          <div className="height-1-2 flex">
+            {/* image  */}
+            <div
+              className="width-4"
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundPosition: "top",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <div className="flex-grow items-self-center flex items-center j-between">
+              <div className="mx-3">
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className="rounded-circle px-2 py-1 fw-bold fs-sm"
+                >
+                  -
+                </button>
 
-              <button className="border-0 mx-3 no-cursor-pointer">2</button>
+                <button className="border-0 mx-3 no-cursor-pointer">
+                  {item.amount}
+                </button>
 
-              <button className="rounded-circle px-2 py-1 fw-bold fs-sm">
-                +
-              </button>
-            </div>
-
-            <div className="flex text-center mr-3">
-              <div className="mr-4">
-                <p className="fw-light fs-xs">Unit price</p>
-
-                <p className="fw-semibold color-gray fs-xs mt-2">$200</p>
+                <button
+                  onClick={() => addToCart(item)}
+                  className="rounded-circle px-2 py-1 fw-bold fs-sm"
+                >
+                  +
+                </button>
               </div>
 
-              <div>
-                <p className="fw-light fs-xs">Subtotal</p>
+              <div className="flex text-center mr-3">
+                <div className="mr-4">
+                  <p className="fw-light fs-xs">Unit price</p>
 
-                <p className="fw-semibold color-gray fs-xs mt-2">$400</p>
+                  <p className="fw-semibold color-gray fs-xs mt-2">
+                    ${item.price}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="fw-light fs-xs">Subtotal</p>
+
+                  <p className="fw-semibold color-gray fs-xs mt-2">
+                    ${item.amount * item.price}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="height-1-2 pt-2">
-          <p className="fs-sm fw-medium">Solid Gold Petite Micropave</p>
+          <div className="height-1-2 pt-2">
+            <p className="fs-sm fw-medium">{item.title}</p>
 
-          <small>men's clothing</small>
+            <small>{item.category}</small>
+          </div>
         </div>
-      </div>
+      ))}
 
       <div className="mt-4">
         <div className="flex j-between">
@@ -70,4 +88,10 @@ export const CartContainer: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+type Props = {
+  cartItems: productType[];
+  addToCart: (clickedItem: productType) => void;
+  removeFromCart: (id: number) => void;
 };

@@ -158,9 +158,13 @@ export const Home: React.FC<{}> = () => {
               </button>
             </div>
 
-            <p className="">{getTotalItems(cartItems)} items</p>
+            <p className="fs-sm">{getTotalItems(cartItems)} items</p>
 
-            <CartContainer />
+            <CartContainer
+              cartItems={cartItems}
+              addToCart={handleAddToCart}
+              removeFromCart={handleRemoveFromCart}
+            />
           </div>
         </div>
       ) : null}
