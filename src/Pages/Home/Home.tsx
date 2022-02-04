@@ -34,8 +34,8 @@ export const Home: React.FC<{}> = () => {
   const [products, setProducts] = useState(data);
   const [openCart, setOpenCart] = useState<boolean>(false);
 
-  const getTotalItems = (items: productType[]) =>
-    items.reduce((a: number, items) => a + items.amount, 0);
+  // const getTotalItems = (items: productType[]) =>
+  //   items.reduce((a: number, items) => a + items.amount, 0);
 
   // ADD TO CART FUNCTION
   const handleAddToCart = (clickedItem: productType) => {
@@ -120,8 +120,8 @@ export const Home: React.FC<{}> = () => {
       <HomeTopBar />
       <Navbar
         openCart={handleOpenCart}
-        cartCount={getTotalItems}
-        cart={cartItems}
+        // cartCount={getTotalItems}
+        // cart={cartItems}
       />
 
       <div className="flex container mx-auto px-5 mt-4 main-body ">
@@ -155,7 +155,7 @@ export const Home: React.FC<{}> = () => {
               </button>
             </div>
 
-            <p className="fs-sm">{getTotalItems(cartItems)} items</p>
+            {/* <p className="fs-sm">{getTotalItems(cartItems)} items</p> */}
 
             <CartContainer
               cartItems={cartItems}

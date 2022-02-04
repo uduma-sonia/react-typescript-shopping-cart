@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { productType } from "../../Pages/Home/Home";
 
-export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
+export const Navbar: React.FC<Props> = ({ openCart }) => {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
 
@@ -49,9 +49,9 @@ export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
           </button>
 
           <button className="border-0 relative" onClick={() => openCart()}>
-            <span className="cart-count fw-bold absolute fs-sm">
+            {/* <span className="cart-count fw-bold absolute fs-sm">
               {cartCount(cart)}
-            </span>
+            </span> */}
             <FontAwesomeIcon icon={faShoppingBasket} size="lg" />
           </button>
         </div>
@@ -62,6 +62,6 @@ export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
 
 type Props = {
   openCart: () => void;
-  cartCount: (item: productType[]) => number;
-  cart: productType[];
+  // cartCount: (item: productType[]) => number;
+  // cart: productType[];
 };
