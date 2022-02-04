@@ -26,7 +26,14 @@ export const Home: React.FC<{}> = () => {
     "products",
     allProducts
   );
-  const [cartItems, setCartItems] = useState([] as productType[]);
+
+  let getLocal;
+
+  if (localStorage.getItem("_cart_item")) {
+    getLocal = JSON.parse(localStorage.getItem("_cart_item") || "");
+  }
+
+  const [cartItems, setCartItems] = useState<productType[]>(getLocal);
   const [products, setProducts] = useState(data);
   const [openCart, setOpenCart] = useState<boolean>(false);
 
@@ -48,7 +55,12 @@ export const Home: React.FC<{}> = () => {
       // First time the item is added
       return [...prev, { ...clickedItem, amount: 1 }];
     });
+    localStorage.setItem("_cart_item", JSON.stringify(cartItems));
   };
+
+  useEffect(() => {
+    localStorage.setItem("_cart_item", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   // REMOVE FROM CART
   const handleRemoveFromCart = (id: number) => {
@@ -109,7 +121,11 @@ export const Home: React.FC<{}> = () => {
   return (
     <div className="home-container full-width-screen">
       <HomeTopBar />
-      <Navbar openCart={handleOpenCart} />
+      <Navbar
+        openCart={handleOpenCart}
+        cartCount={getTotalItems}
+        cart={cartItems}
+      />
 
       <div className="flex container mx-auto px-5 mt-4 main-body ">
         <SortingComponent

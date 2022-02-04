@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { productType } from "../../Pages/Home/Home";
 
-export const Navbar: React.FC<Props> = ({ openCart }) => {
+export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
   const [searchInput, setSearchInput] = useState<string>("");
@@ -49,7 +50,9 @@ export const Navbar: React.FC<Props> = ({ openCart }) => {
           </button>
 
           <button className="border-0 relative" onClick={() => openCart()}>
-            <span className="cart-count fw-bold absolute fs-sm">1</span>
+            <span className="cart-count fw-bold absolute fs-sm">
+              {cartCount(cart)}
+            </span>
             <FontAwesomeIcon icon={faShoppingBasket} size="lg" />
           </button>
         </div>
@@ -60,4 +63,6 @@ export const Navbar: React.FC<Props> = ({ openCart }) => {
 
 type Props = {
   openCart: () => void;
+  cartCount: (item: productType[]) => number;
+  cart: productType[];
 };
