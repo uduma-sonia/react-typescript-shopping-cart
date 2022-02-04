@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Navbar.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
-import { productType } from "../../Pages/Home/Home";
+// import { productType } from "../../Pages/Home/Home";
 
 export const Navbar: React.FC<Props> = ({ openCart }) => {
   const navigate = useNavigate();
