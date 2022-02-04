@@ -39,6 +39,9 @@ button {
 .cursor-pointer {
   cursor: pointer;
 }
+.no-cursor-pointer {
+  cursor: text;
+}
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -280,6 +283,9 @@ small {
 }
 .items-end {
   align-items: flex-end;
+}
+.items-self-center {
+  align-self: center;
 }
 
 /* ////////////////// */

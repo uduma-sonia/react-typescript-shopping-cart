@@ -10,14 +10,16 @@
   top: 0px;
   right: 0px;
   width: 100vw;
-  background-color: #00000041;
   min-height: 100vh;
+  background-color: #00000041;
   z-index: 99;
   box-shadow: 1px 2px 4px 2px rgb(211, 211, 211);
 }
 .cart-container-inner {
   background-color: rgb(245, 245, 245);
   width: 450px;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 @media (max-width: 600px) {

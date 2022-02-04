@@ -147,7 +147,7 @@ export const Home: React.FC<{}> = () => {
 
       {openCart ? (
         <div className="cart-container">
-          <div className="color-gray cart-container-inner p-3">
+          <div className="color-gray cart-container-inner p-3 no-scrollbar">
             <div className="flex j-between items-center mb-3">
               <p className="fs-sm-2 fw-medium">Your cart</p>
               <button
@@ -158,7 +158,7 @@ export const Home: React.FC<{}> = () => {
               </button>
             </div>
 
-            <p className="">3 items</p>
+            <p className="">{getTotalItems(cartItems)} items</p>
 
             <CartContainer />
           </div>
