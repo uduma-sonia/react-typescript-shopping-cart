@@ -63,6 +63,7 @@ export const Home: React.FC<{}> = () => {
     } else {
       setCartItems([]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
