@@ -1,14 +1,14 @@
+// eslint-disable react-hooks/exhaustive-deps
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingBasket, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { productType } from "../../Pages/Home/Home";
 
 export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
   const navigate = useNavigate();
   const [name, setName] = useState<string>("");
-  const [searchInput, setSearchInput] = useState<string>("");
 
   useEffect(() => {
     if (window !== undefined) {

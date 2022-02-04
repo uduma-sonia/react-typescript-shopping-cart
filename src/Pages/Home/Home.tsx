@@ -22,10 +22,7 @@ const allProducts = async (): Promise<productType[]> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
 
 export const Home: React.FC<{}> = () => {
-  const { data, isLoading, error } = useQuery<productType[]>(
-    "products",
-    allProducts
-  );
+  const { data, isLoading } = useQuery<productType[]>("products", allProducts);
 
   let getLocal;
 
