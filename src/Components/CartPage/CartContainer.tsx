@@ -39,7 +39,7 @@ export const CartContainer: React.FC<Props> = ({
                   }}
                 />
                 <div className="flex-grow items-self-center flex items-center j-between">
-                  <div className="mx-3">
+                  <div className="mx-3 btns-container">
                     <button
                       onClick={() => removeFromCart(item.id)}
                       className="rounded-circle px-2 py-1 fw-bold fs-sm"
@@ -47,7 +47,7 @@ export const CartContainer: React.FC<Props> = ({
                       -
                     </button>
 
-                    <button className="border-0 mx-3 no-cursor-pointer">
+                    <button className="border-0 mx-3 no-cursor-pointer amount-btn">
                       {item.amount}
                     </button>
 
