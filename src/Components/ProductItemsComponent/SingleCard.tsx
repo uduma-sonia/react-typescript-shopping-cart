@@ -1,11 +1,22 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { productType } from "../../Pages/Home/Home";
 
 export const SingleCard: React.FC<Props> = ({ item, handleAddToCart }) => {
+  const notify = () =>
+    toast("Product added to cart", {
+      position: "bottom-center",
+    });
+  const addToCart = (item: productType) => {
+    notify();
+    handleAddToCart(item);
+  };
+
   return (
     <div className="rounded item-card flex flex-col p-2">
+      <Toaster />
       <div
         className="item-card-image-container"
         style={{
@@ -40,17 +51,13 @@ export const SingleCard: React.FC<Props> = ({ item, handleAddToCart }) => {
             color="#ff9900"
             className="cursor-pointer add-cart-btn"
             icon={faShoppingBasket}
-            onClick={() => handleAddToCart(item)}
+            onClick={() => addToCart(item)}
           />
         </div>
       </div>
     </div>
   );
 };
-
-{
-  /* <td className="pr-3">{item.body.substring(0, 65)}...</td> */
-}
 
 type Props = {
   item: productType;

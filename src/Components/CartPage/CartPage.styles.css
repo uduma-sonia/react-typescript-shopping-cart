@@ -2,18 +2,6 @@
   border-bottom: 1px solid #dadada;
   margin-top: 20px;
 }
-.cart-image-container {
-  height: 90px;
-}
-.math-btn {
-  background-color: rgb(230, 230, 230);
-}
-.math-btn:hover {
-  background-color: #ff9900;
-}
-.single-cart-card {
-  border-bottom: 1px solid rgb(189, 189, 189);
-}
 .checkout-btn {
   background-color: #800080;
   color: #ffffff;

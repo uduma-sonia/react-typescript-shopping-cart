@@ -164,6 +164,7 @@ export const Home: React.FC<{}> = () => {
               cartItems={cartItems}
               addToCart={handleAddToCart}
               removeFromCart={handleRemoveFromCart}
+              closeCart={handleOpenCart}
             />
           </div>
         </div>

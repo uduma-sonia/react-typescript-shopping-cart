@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket, faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -26,7 +26,7 @@ export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
       <div className="container mx-auto px-5 full-height flex j-between items-center">
         <h1 className="color-main fw-medium fs-md logo">Tap House</h1>
 
-        <div className="flex width-1-3 j-between fs-sm fw-semibold uppercase navbar-category">
+        {/* <div className="flex width-1-3 j-between fs-sm fw-semibold uppercase navbar-category">
           <form className="full-width flex">
             <input
               className="search-input color-gray pl-2 flex-grow"
@@ -42,7 +42,7 @@ export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </form>
-        </div>
+        </div> */}
 
         <div className="width-auto flex j-between profile">
           <button className="border-0 fs-sm-2 mr-4 fw-semibold user-name">
