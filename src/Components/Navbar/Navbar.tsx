@@ -1,4 +1,3 @@
-// eslint-disable react-hooks/exhaustive-deps
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.styles.css";
@@ -19,7 +18,7 @@ export const Navbar: React.FC<Props> = ({ openCart, cartCount, cart }) => {
         setName(userName);
       }
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="navbar-container full-width-screen">
